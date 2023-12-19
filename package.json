@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-inappbrowser",
-  "version": "3.0.0-j5.4",
+  "version": "6.0.1-dev-j5.6",
   "description": "Cordova InAppBrowser Plugin",
   "types": "./types/index.d.ts",
   "cordova": {
@@ -8,18 +8,11 @@
     "platforms": [
       "android",
       "browser",
-      "ios",
-      "osx",
-      "windows"
+      "ios"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/apache/cordova-plugin-inappbrowser"
-  },
-  "bugs": {
-    "url": "https://issues.apache.org/jira/browse/CB"
-  },
+  "repository": "github:apache/cordova-plugin-inappbrowser",
+  "bugs": "https://github.com/apache/cordova-plugin-inappbrowser/issues",
   "keywords": [
     "cordova",
     "in",
@@ -29,13 +22,11 @@
     "ecosystem:cordova",
     "cordova-android",
     "cordova-browser",
-    "cordova-ios",
-    "cordova-osx",
-    "cordova-windows"
+    "cordova-ios"
   ],
   "scripts": {
-    "test": "npm run eslint",
-    "eslint": "node node_modules/eslint/bin/eslint www && node node_modules/eslint/bin/eslint src && node node_modules/eslint/bin/eslint tests"
+    "test": "npm run lint",
+    "lint": "eslint ."
   },
   "engines": {
     "cordovaDependencies": {
@@ -43,6 +34,20 @@
         "cordova": ">=3.1.0"
       },
       "4.0.0": {
+        "cordova": ">=3.1.0",
+        "cordova-ios": ">=4.0.0"
+      },
+      "5.0.0": {
+        "cordova-android": ">=9.0.0",
+        "cordova-ios": ">=6.0.0",
+        "cordova": ">=9.0.0"
+      },
+      "6.0.1-dev": {
+        "cordova-android": ">=10.0.0",
+        "cordova-ios": ">=6.0.0",
+        "cordova": ">=9.0.0"
+      },
+      "7.0.0": {
         "cordova": ">100"
       }
     }
@@ -50,12 +55,6 @@
   "author": "Apache Software Foundation",
   "license": "Apache-2.0",
   "devDependencies": {
-    "eslint": "^4.0.0",
-    "eslint-config-semistandard": "^11.0.0",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.3.0",
-    "eslint-plugin-node": "^5.0.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-standard": "^3.0.1"
+    "@cordova/eslint-config": "^5.0.0"
   }
 }

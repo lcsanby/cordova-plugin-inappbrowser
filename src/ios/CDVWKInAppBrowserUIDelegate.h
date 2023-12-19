@@ -17,14 +17,16 @@
  under the License.
  */
 
-#import <Cordova/CDVPlugin.h>
+#import <WebKit/WebKit.h>
 
-@interface CDVInAppBrowser : CDVPlugin {
+@interface CDVWKInAppBrowserUIDelegate : NSObject <WKUIDelegate>{
+    @private
+    UIViewController* _viewController;
 }
 
-@property (nonatomic, copy) NSString* callbackId;
+@property (nonatomic, copy) NSString* title;
 
-- (void)open:(CDVInvokedUrlCommand*)command;
+- (instancetype)initWithTitle:(NSString*)title;
+-(void) setViewController:(UIViewController*) viewController;
 
 @end
-
